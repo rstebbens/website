@@ -29,7 +29,7 @@
 .follow-grid { display:grid; grid-template-columns:1fr 1fr 1.05fr; gap:34px; align-items:start; }
 .follow-grid h1,.follow-grid h2 { font-size:1.35rem; color:#194c68; margin:0 0 14px; }
 .follow-grid p { margin:0 0 16px; }
-.follow-portrait { width:100%; aspect-ratio:1.12; object-fit:cover; border-radius:10px; }
+.follow-portrait { display:block; width:100%; height:auto; object-fit:contain; border-radius:10px; }
 .follow-content { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(0,1.35fr); gap:30px; padding-top:38px; padding-bottom:60px; }
 .follow-content iframe { width:100%; height:780px; border:1px solid #dfe5e9; border-radius:10px; background:#fff; }
 .follow-note { padding:20px 24px; background:#fff; border:1px solid #dfe5e9; border-radius:12px; }
@@ -49,7 +49,7 @@
     <div class="wrap follow-grid">
       <div>
         <h1>Follow My Work</h1>
-        <p>I'm always thinking up new projects, distractions and ideas. If that's something you're interested in hearing more about, sign up to my newsletter.</p>
+        <p>I'm always thinking up new projects, distractions and ideas. If that's something you're interested in hearing more about, sign up to my <a href="https://docs.google.com/forms/d/e/1FAIpQLSc70ficNaq1CrPyRwQ3q2nMPddrc3Nkd1p-dR0eMZBjrXOPNw/viewform">newsletter</a>.</p>
       </div>
       <div>
         <h2>Connect with Me</h2>
@@ -59,21 +59,7 @@
       <img class="follow-portrait" src="/website/assets/a12539d89861f474917eaacd791b2c0c.jpg" alt="Rob sitting at a café" loading="lazy">
     </div>
   </section>
-  <div class="wrap follow-content">
-    <section>
-      <h2>Keep Updated</h2>
-      <p>I'm writing a book called <em>Mostly Wrong</em>, alongside other experiments in coaching, storytelling and organisational life.</p>
-      <iframe title="Newsletter sign-up form" src="https://docs.google.com/forms/d/e/1FAIpQLSc70ficNaq1CrPyRwQ3q2nMPddrc3Nkd1p-dR0eMZBjrXOPNw/viewform?embedded=true" loading="lazy">Loading newsletter form…</iframe>
-      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc70ficNaq1CrPyRwQ3q2nMPddrc3Nkd1p-dR0eMZBjrXOPNw/viewform">Open the sign-up form in a new tab</a></p>
-    </section>
-    <section class="follow-note">
-      <h2>Latest thoughts and stories</h2>
-      <p>Writing, storytelling and the occasional workplace absurdity. My articles and updates live on LinkedIn.</p>
-      <p><a class="button" href="https://www.linkedin.com/in/rob-stebbens-19954824/">Read my posts on LinkedIn</a></p>
-      <p>You'll also find my other projects, games and writing in the <a href="/website/project-page/">projects gallery</a>.</p>
-    </section>
-  </div>
-</main>
+  </main>
   <footer>
     <div class="wrap">
       ©
