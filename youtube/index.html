@@ -24,6 +24,15 @@
 }
 
 </style>
+<style>
+.video-intro { text-align:center; max-width:760px; margin:0 auto 28px; }
+.video-intro h1 { font-size:clamp(1.9rem,4vw,2.8rem); color:#194c68; margin:0 0 12px; }
+.video-shell { max-width:1100px; margin:0 auto; }
+.video-frame { display:block; width:100%; aspect-ratio:16/9; height:auto; border:0; border-radius:12px; background:#142b38; box-shadow:0 12px 35px #142b3824; }
+.video-actions { display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap; padding:20px 0 12px; }
+.video-actions p { margin:0; }
+@media(max-width:600px) { .video-frame { border-radius:6px; } .video-actions { align-items:flex-start; flex-direction:column; } }
+</style>
 </head>
 <body>
   <a class="skip" href="#content">
@@ -64,28 +73,20 @@
     </nav>
   </header>
   <main id="content">
-    <section class="hero">
-      <div class="wrap">
-        <h1>
-          YouTube
-        </h1>
+  <div class="wrap content">
+    <div class="video-intro">
+      <h1>Workplace parody, one video at a time</h1>
+      <p>A slightly bonkers collection of workplace parody videos, inspired by the wonderfully simple world of Mr Men. Familiar characters meet Agile, leadership, meetings, coaching and all the other organisational absurdities we somehow decided were completely normal.</p>
+    </div>
+    <section class="video-shell">
+      <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLGyvEkdk2pYgNmDnuSrzqlhaDyLeWocAp" title="Rob Stebbens workplace parody video playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      <div class="video-actions">
+        <p>Watch the playlist here, or open it directly on YouTube.</p>
+        <a class="button" href="https://www.youtube.com/playlist?list=PLGyvEkdk2pYgNmDnuSrzqlhaDyLeWocAp" target="_blank" rel="noopener">View playlist on YouTube</a>
       </div>
     </section>
-    <div class="wrap content migrated">
-      <section>
-        <div class="media">
-          <a href="https://www.youtube.com/embed/videoseries?embed_config=%7B%22enc%22:%22AXH1ezlEgeKFZdY29RliWGbMgEP--YJCeuqN5r--S_R_htM6LoRrJYEnX-rAmRIE4wfqup4qToxrVnibrIEjJUzCBUMUCT_bYAuK7F6KNDCmowWPXPHb2vDbgos9qG3QiqMXgpqVoWMyG6f6E2wTA-SE2OmJ1P3d_khCz_UuRgEuK2hZTiKgoYwXDVx99HN-qiE0qrESrhP1-EQ0JQLy1iNkmwdmObaYNOA5pgKYlPqFbjil0IU1thh9vVZp52dLD384PbVDisQLLmTsWhbFCYZUUdcGt_N1a-oTSJdqO7vNjYOzB_zSry-sCp54o0NsV7OfOGg%3D%22%7D&amp;enablejsapi=1&amp;errorlinks=1&amp;list=PLGyvEkdk2pYgNmDnuSrzqlhaDyLeWocAp&amp;origin=https://sites.google.com&amp;vl=1">
-          Open embedded content
-          </a>
-        </div>
-        <p class="zfr3Q CDt4Ke" dir="ltr">
-          <span>
-          A slightly bonkers collection of workplace parody videos, inspired by the wonderfully simple world of Mr Men. Familiar characters meet Agile, leadership, meetings, coaching and all the other organisational absurdities we somehow decided were completely normal.
-          </span>
-        </p>
-      </section>
-    </div>
-  </main>
+  </div>
+</main>
   <footer>
     <div class="wrap">
       ©
