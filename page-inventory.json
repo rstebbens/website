@@ -1,0 +1,128 @@
+[
+  {
+    "name": "AA1",
+    "path": "/aa1/",
+    "sections": 2,
+    "characters": 782
+  },
+  {
+    "name": "AA2",
+    "path": "/aa2/",
+    "sections": 2,
+    "characters": 592
+  },
+  {
+    "name": "AI Coaching Tropes Generator",
+    "path": "/ai-coaching-tropes-generator/",
+    "sections": 2,
+    "characters": 1120
+  },
+  {
+    "name": "About",
+    "path": "/about/",
+    "sections": 3,
+    "characters": 1737
+  },
+  {
+    "name": "Agile Adventures Part 3",
+    "path": "/agile-adventures-part-3/",
+    "sections": 2,
+    "characters": 604
+  },
+  {
+    "name": "Agile Games",
+    "path": "/project-page/agile-games/",
+    "sections": 6,
+    "characters": 512
+  },
+  {
+    "name": "Coaching Playbook",
+    "path": "/coaching-playbook/",
+    "sections": 3,
+    "characters": 907
+  },
+  {
+    "name": "First Playbook Cheatsheets",
+    "path": "/first-playbook-cheatsheets/",
+    "sections": 1,
+    "characters": 360
+  },
+  {
+    "name": "FlowTris",
+    "path": "/project-page/agile-games/flowtris/",
+    "sections": 2,
+    "characters": 118
+  },
+  {
+    "name": "Follow Me",
+    "path": "/follow-me/",
+    "sections": 2,
+    "characters": 406
+  },
+  {
+    "name": "Home",
+    "path": "/",
+    "sections": 2,
+    "characters": 933
+  },
+  {
+    "name": "I have a proof of my book",
+    "path": "/i-have-a-proof-of-my-book/",
+    "sections": 2,
+    "characters": 1355
+  },
+  {
+    "name": "I think I am done",
+    "path": "/i-think-i-am-done/",
+    "sections": 2,
+    "characters": 1110
+  },
+  {
+    "name": "Icebreakers",
+    "path": "/project-page/agile-games/icebreakers/",
+    "sections": 2,
+    "characters": 340
+  },
+  {
+    "name": "Interactive Fiction",
+    "path": "/interactive-fiction/",
+    "sections": 2,
+    "characters": 1421
+  },
+  {
+    "name": "My Book",
+    "path": "/my-book/",
+    "sections": 3,
+    "characters": 1036
+  },
+  {
+    "name": "Open Space Card Game",
+    "path": "/open-space-card-game/",
+    "sections": 3,
+    "characters": 3877
+  },
+  {
+    "name": "Play Open Space Card Game",
+    "path": "/play-open-space-card-game/",
+    "sections": 3,
+    "characters": 198
+  },
+  {
+    "name": "Project Page",
+    "path": "/project-page/",
+    "sections": 4,
+    "characters": 277
+  },
+  {
+    "name": "Story Telling for Influence",
+    "path": "/story-telling-for-influence/",
+    "sections": 3,
+    "characters": 3155
+  },
+  {
+    "name": "YouTube",
+    "path": "/youtube/",
+    "sections": 1,
+    "characters": 282
+  }
+]
