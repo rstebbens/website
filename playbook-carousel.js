@@ -7,6 +7,8 @@
   const status = document.getElementById("playbook-status");
   const gallery = document.getElementById("playbook-gallery");
   const image = document.getElementById("playbook-image");
+  const slideElement = document.getElementById("playbook-slide");
+  const preloaded = new Map();
   const imageLink = document.getElementById("playbook-image-link");
   const caption = document.getElementById("playbook-caption");
   const count = document.getElementById("playbook-count");
@@ -16,6 +18,64 @@
 
   let slides = [];
   let current = 0;
+  let requestId = 0;
+
+  function preload(index) {
+    if (!slides.length) return;
+    const slide = slides[(index + slides.length) % slides.length];
+    if (preloaded.has(slide.download_url)) return;
+    const nextImage = new Image();
+    nextImage.decoding = "async";
+    nextImage.src = slide.download_url;
+    preloaded.set(slide.download_url, nextImage);
+  }
+
+  function loadImage(slide) {
+    const token = ++requestId;
+    const url = slide.download_url;
+    const cached = preloaded.get(url);
+    slideElement.classList.add("is-loading");
+
+    function finish() {
+      if (token !== requestId) return;
+      image.src = url;
+      slideElement.classList.remove("is-loading");
+      preload(current + 1);
+    }
+
+    function fail() {
+      if (token !== requestId) return;
+      slideElement.classList.remove("is-loading");
+      image.alt = "Image temporarily unavailable";
+      image.removeAttribute("src");
+    }
+
+    if (image.currentSrc === url && image.complete && image.naturalWidth) {
+      finish();
+      return;
+    }
+
+    const loader = cached || new Image();
+    if (!cached) {
+      loader.decoding = "async";
+      loader.src = url;
+      preloaded.set(url, loader);
+    }
+    if (loader.complete) {
+      if (loader.naturalWidth) finish();
+      else fail();
+    } else {
+      loader.addEventListener("load", finish, { once: true });
+      loader.addEventListener("error", fail, { once: true });
+    }
+  }
+
+  image.addEventListener("load", () => {
+    if (!slides.length) slideElement.classList.remove("is-loading");
+  });
+  if (image.complete && image.naturalWidth) {
+    slideElement.classList.remove("is-loading");
+  }
 
   function show(index) {
     if (!slides.length) return;
@@ -23,7 +83,7 @@
     current = (index + slides.length) % slides.length;
     const slide = slides[current];
 
-    image.src = slide.download_url;
+    loadImage(slide);
     image.alt = slide.name.replace(/\.[^.]+$/, "");
     imageLink.href = slide.html_url;
     caption.textContent = image.alt;
