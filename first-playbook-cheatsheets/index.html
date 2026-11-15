@@ -24,7 +24,24 @@
     .playbook-details { text-align:center; max-width:770px; margin:0 auto; }
     .playbook-details p { margin:12px 0; }
     .playbook-details a { overflow-wrap:anywhere; }
-    .playbook-status { text-align:center; padding:32px 0; }
+    .playbook-status { text-align:center; padding:20px 0; color:#526675; }
+    .playbook-slide { position:relative; }
+    .playbook-slide a { display:block; position:relative; min-height:220px; }
+    .playbook-slide a::before {
+      content:""; position:absolute; inset:0; border-radius:10px; z-index:0;
+      background:linear-gradient(105deg,#e9eff2 8%,#f8fafb 30%,#e9eff2 52%);
+      background-size:220% 100%; animation:playbook-shimmer 1.6s ease-in-out infinite;
+      opacity:0; pointer-events:none; transition:opacity .2s;
+    }
+    .playbook-slide.is-loading a::before { opacity:1; }
+    .playbook-slide img { position:relative; z-index:1; transition:opacity .22s ease; }
+    .playbook-slide.is-loading img { opacity:0; }
+    .playbook-status[hidden], .playbook-carousel [hidden] { display:none !important; }
+    @keyframes playbook-shimmer { to { background-position-x:-220%; } }
+    @media(prefers-reduced-motion:reduce) {
+      .playbook-slide a::before { animation:none; }
+      .playbook-slide img { transition:none; }
+    }
     @media(max-width:600px) {
       .playbook-stage { grid-template-columns:38px minmax(0,1fr) 38px; gap:4px; }
       .carousel-arrow { width:36px; height:36px; font-size:1.3rem; }
@@ -47,15 +64,15 @@
         <p>Tackling everyday problems that make delivery that little bit harder than it needs to be.</p>
       </div>
       <section class="playbook-carousel" aria-label="Coaching Playbook image gallery">
-        <p id="playbook-status" class="playbook-status" role="status">Loading the latest cheat sheets from GitHub…</p>
-        <div id="playbook-gallery" hidden>
+        <p id="playbook-status" class="playbook-status" role="status">Checking for the latest cheat sheets…</p>
+        <div id="playbook-gallery">
           <div class="playbook-stage">
             <button type="button" class="carousel-arrow" id="playbook-prev" aria-label="Previous cheat sheet">‹</button>
-            <figure class="playbook-slide">
+            <figure class="playbook-slide is-loading" id="playbook-slide">
               <a id="playbook-image-link" target="_blank" rel="noopener" href="#">
-                <img id="playbook-image" alt="">
+                <img id="playbook-image" src="https://raw.githubusercontent.com/rstebbens/Agileplaybook/main/Continuous%20Improvement.jpg" alt="Continuous Improvement" fetchpriority="high" decoding="async">
               </a>
-              <figcaption id="playbook-caption"></figcaption>
+              <figcaption id="playbook-caption">Continuous Improvement</figcaption>
             </figure>
             <button type="button" class="carousel-arrow" id="playbook-next" aria-label="Next cheat sheet">›</button>
           </div>
