@@ -1,101 +1,80 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Rob Stebbens: organisational coaching, projects and Agile games.">
-    <title>
-    First Playbook Cheatsheets | Rob Stebbens
-  </title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visual Agile coaching cheatsheets and practical guides by Rob Stebbens.">
+  <title>Coaching Playbook Cheatsheets | Rob Stebbens</title>
   <link rel="stylesheet" href="../styles.css">
   <style>
-.migrated{max-width:1120px}
-.migrated img{max-width:100%;height:auto;object-fit:contain}
-.migrated section{max-width:100%}
-.migrated p,.migrated li{line-height:1.65}
-.migrated iframe{width:100%;max-width:100%;aspect-ratio:16/9;height:auto}
-.migrated ul,.migrated ol{padding-left:1.6rem}
-.migrated .media img{max-height:580px}
-.migrated [style]{max-width:100%}
-@media(min-width:850px){.migrated section{max-width:900px;margin-left:auto;margin-right:auto}
-}
-@media(max-width:600px){.migrated h1{font-size:1.75rem}
-.migrated h2{font-size:1.35rem}
-}
-
-</style>
+    .playbook-intro { max-width:780px; margin:0 auto 24px; }
+    .playbook-intro h1 { margin:0 0 12px; }
+    .playbook-carousel { max-width:1060px; margin:30px auto; }
+    .playbook-stage { position:relative; display:grid; grid-template-columns:52px minmax(0,1fr) 52px; gap:14px; align-items:center; }
+    .playbook-slide { margin:0; text-align:center; min-width:0; }
+    .playbook-slide img { display:block; max-width:100%; max-height:min(65vh,680px); width:auto; height:auto; margin:auto; object-fit:contain; border-radius:8px; box-shadow:0 8px 28px #142b381a; }
+    .playbook-slide figcaption { font-weight:700; margin-top:14px; font-size:1.08rem; }
+    .carousel-arrow { display:flex; justify-content:center; align-items:center; border:1px solid #cfd8e0; border-radius:50%; width:48px; height:48px; font:700 1.65rem/1 system-ui; color:#194c68; background:white; cursor:pointer; }
+    .carousel-arrow:hover:not(:disabled) { background:#eaf0f2; }
+    .carousel-arrow:disabled { opacity:.35; cursor:not-allowed; }
+    .carousel-controls { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:15px; margin:16px 0 24px; }
+    .carousel-dots { display:flex; justify-content:center; flex-wrap:wrap; gap:9px; }
+    .carousel-dots button { width:10px; height:10px; padding:0; border:0; border-radius:50%; background:#b9c7cf; cursor:pointer; }
+    .carousel-dots button[aria-current="true"] { background:#194c68; transform:scale(1.25); }
+    .playbook-details { text-align:center; max-width:770px; margin:0 auto; }
+    .playbook-details p { margin:12px 0; }
+    .playbook-details a { overflow-wrap:anywhere; }
+    .playbook-status { text-align:center; padding:32px 0; }
+    @media(max-width:600px) {
+      .playbook-stage { grid-template-columns:38px minmax(0,1fr) 38px; gap:4px; }
+      .carousel-arrow { width:36px; height:36px; font-size:1.3rem; }
+      .playbook-slide img { max-height:55vh; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip" href="#content">
-  Skip to content
-  </a>
+  <a class="skip" href="#content">Skip to content</a>
   <header class="site-header" id="site-header"></header>
   <main id="content">
     <section class="hero">
       <div class="wrap">
-        <h1>
-          First Playbook Cheatsheets
-        </h1>
+        <h1>Coaching Playbook Cheatsheets</h1>
       </div>
     </section>
-    <div class="wrap content migrated">
-      <section>
-        <p class="zfr3Q CDt4Ke" dir="ltr">
-          <span>
-          A collection of practical tools, patterns and visual guides for making processes work a little better in the real world.
-          </span>
-        </p>
-        <p class="zfr3Q CDt4Ke" dir="ltr">
-          <span>
-          Tackling everyday problems that make delivery that little bit harder than it needs to be.
-          </span>
-        </p>
-        <p class="zfr3Q CDt4Ke" dir="ltr">
-          <span>
-          Copies available for
-          </span>
-          <span>
-          </span>
-          <span>
-          free
-          </span>
-          <span>
-          on Github.
-          </span>
-          <a href="https://github.com/rstebbens/Agileplaybook">
-          <span>
-          https://github.com/rstebbens/Agileplaybook
-          </span>
-          </a>
-        </p>
-        <p class="zfr3Q CDt4Ke" dir="ltr">
-          <span>
-          Or purchase an A3 Print Here 👉
-          </span>
-          <a href="https://www.ebay.com/usr/robstebbens">
-          <span>
-          https://www.ebay.com/usr/robstebbens
-          </span>
-          </a>
-          <span>
-          👈
-          </span>
-        </p>
+    <div class="wrap content">
+      <div class="playbook-intro">
+        <p>A collection of practical tools, patterns and visual guides for making processes work a little better in the real world.</p>
+        <p>Tackling everyday problems that make delivery that little bit harder than it needs to be.</p>
+      </div>
+      <section class="playbook-carousel" aria-label="Coaching Playbook image gallery">
+        <p id="playbook-status" class="playbook-status" role="status">Loading the latest cheat sheets from GitHub…</p>
+        <div id="playbook-gallery" hidden>
+          <div class="playbook-stage">
+            <button type="button" class="carousel-arrow" id="playbook-prev" aria-label="Previous cheat sheet">‹</button>
+            <figure class="playbook-slide">
+              <a id="playbook-image-link" target="_blank" rel="noopener" href="#">
+                <img id="playbook-image" alt="">
+              </a>
+              <figcaption id="playbook-caption"></figcaption>
+            </figure>
+            <button type="button" class="carousel-arrow" id="playbook-next" aria-label="Next cheat sheet">›</button>
+          </div>
+          <div class="carousel-controls">
+            <span id="playbook-count" aria-live="polite"></span>
+            <div class="carousel-dots" id="playbook-dots" aria-label="Choose a cheat sheet"></div>
+          </div>
+        </div>
       </section>
+      <div class="playbook-details">
+        <p>View and download the high-resolution versions <a href="https://github.com/rstebbens/Agileplaybook">free on GitHub</a>.</p>
+        <p>Or <a href="https://www.ebay.com/usr/robstebbens">purchase an A3 print on eBay</a>.</p>
+      </div>
     </div>
   </main>
   <footer>
-    <div class="wrap">
-      ©
-      <span id="year">
-      2026
-      </span>
-      Rob Stebbens ·
-      <a href="https://github.com/rstebbens">
-      GitHub
-      </a>
-    </div>
+    <div class="wrap">© <span id="year">2026</span> Rob Stebbens · <a href="https://github.com/rstebbens">GitHub</a></div>
   </footer>
   <script src="../site.js" defer></script>
+  <script src="../playbook-carousel.js" defer></script>
 </body>
 </html>
