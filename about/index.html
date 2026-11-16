@@ -23,6 +23,11 @@
 .migrated h2{font-size:1.35rem}
 }
 
+.about-hero{background:#f2f3f2;padding:24px 0}
+.about-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,380px);align-items:center;gap:32px;min-height:300px}
+.about-hero-title h1{font-size:clamp(2.3rem,5vw,3.8rem);color:#194c68;margin:0}
+.about-portrait{display:block;width:100%;max-width:380px;max-height:360px;object-fit:contain;justify-self:end}
+@media(max-width:650px){.about-hero-grid{grid-template-columns:1fr;gap:12px;min-height:0}.about-portrait{max-width:260px;max-height:280px;justify-self:center}.about-hero{padding:25px 0}}
 </style>
 </head>
 <body>
@@ -31,13 +36,13 @@
   </a>
   <header class="site-header" id="site-header"></header>
   <main id="content">
-        <section class="home-intro">
-      <div class="wrap home-grid">
-        <h1>
-          About
-        </h1>
+        <section class="about-hero">
+      <div class="wrap about-hero-grid">
+        <div class="about-hero-title">
+          <h1>About</h1>
+        </div>
+        <img class="about-portrait" alt="Illustrated portrait of Rob Stebbens" src="/website/assets/b5f2c84def0823b23f6c1bb78c516795.jpg">
       </div>
-          <img alt="" loading="lazy" src="/website/assets/b5f2c84def0823b23f6c1bb78c516795.jpg"/>
     </section>
     <div class="wrap content migrated">
       <section>
