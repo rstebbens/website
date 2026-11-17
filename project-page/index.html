@@ -14,6 +14,7 @@
 .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 22px}
 .gallery-item{display:flex;flex-direction:column;gap:12px;color:inherit;text-decoration:none;min-width:0}
 .gallery-item img{display:block;width:100%;aspect-ratio:1.4;object-fit:cover;border-radius:9px;box-shadow:0 3px 14px #142d3b19}
+.gallery-item--book img{object-fit:contain;background:#f2f3f2}
 .gallery-item span{display:block;text-align:center;background:#194c68;color:white;border-radius:5px;padding:10px 8px;font-weight:650}
 .gallery-item:hover span{background:#10364e}
 @media(max-width:800px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -44,7 +45,7 @@
         </p>
       </div>
       <div class="gallery">
-        <a class="gallery-item" href="/website/my-book/">
+        <a class="gallery-item gallery-item--book" href="/website/my-book/">
         <img loading="lazy" src="/website/assets/db8e294e61ce1a047aa6995ba902a7d7.jpg" alt="My book">
         <span>
         My book
