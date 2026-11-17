@@ -50,6 +50,18 @@
     header.replaceChildren(brand, toggle, nav);
   }
 
+  // Reuse the existing Google Analytics 4 property across every page.
+  const measurementId = "G-VETP5V2JVF";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", measurementId);
+  const analyticsScript = document.createElement("script");
+  analyticsScript.async = true;
+  analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=" + measurementId;
+  document.head.append(analyticsScript);
+
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
