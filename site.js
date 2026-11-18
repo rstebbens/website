@@ -62,6 +62,22 @@
   analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=" + measurementId;
   document.head.append(analyticsScript);
 
+  // Keep staging URLs working while serving root-relative paths on the custom domain.
+  if (location.hostname !== "rstebbens.github.io") {
+    document.querySelectorAll("[href], [src], [srcset]").forEach(el => {
+      for (const attr of ["href", "src"]) {
+        const value = el.getAttribute(attr);
+        if (value && value.startsWith("/website/")) {
+          el.setAttribute(attr, value.slice("/website".length));
+        }
+      }
+      const srcset = el.getAttribute("srcset");
+      if (srcset && srcset.includes("/website/")) {
+        el.setAttribute("srcset", srcset.split("/website/").join("/"));
+      }
+    });
+  }
+
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
